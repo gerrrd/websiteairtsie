@@ -1,7 +1,6 @@
 import streamlit as st
 import time
 import requests
-from google.cloud import storage
 
 url = 'http://localhost:8000/image'
 
