@@ -2,14 +2,15 @@ import streamlit as st
 import time
 import requests
 
-url = 'http://localhost:8000/image'
+url = 'https://airtsie-ilga65pf7a-ew.a.run.app/image'
 
 st.markdown('''
 
-# *Artsy* Storyteller
+# **AI-rtsie**,
+the artsy storyteller
 
 Hey there!
-I am an artifical intelligence that turns your text into an ✨*artsy*✨ image.
+I am an artifical intelligence 🤖 that turns your text into ✨*artsy*✨ images.
 
 ''')
 
@@ -58,6 +59,7 @@ if st.button('Submit'):
                             style_attr = f"[{result['style'][1][i]}]({result['style'][2][i]}) / [Unsplash](https://unsplash.com/)"
                             st.image(result['style'][0][i], caption='style image')
                             st.markdown(style_attr)
+                    time.sleep(2)
 
             else:
                 cols13 = st.beta_columns(3)
@@ -98,4 +100,8 @@ if st.button('Submit'):
                             st.image(result['style'][0][i], caption='style image')
                             st.markdown(style_attr)
 
+st.markdown(
 
+    '*Powered by Neural Style Transfer library of TensorFlow with “magenta/arbitrary-image-stylization-v1-256”*'
+
+    )
